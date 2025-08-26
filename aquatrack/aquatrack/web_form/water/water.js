@@ -1,6 +1,18 @@
 
 
 frappe.ready(function () {
+
+    let today = new Date();
+    if(today.getDay() === 1){
+        frappe.msgprint({
+            title: "Notice! ",
+           // indicator: "orange",
+            message: "Order placed on Sunday will be delivered on Monday."
+        });
+    }
+
+
+
     frappe.web_form.validate = () =>  {
         let phone = frappe.web_form.doc.number;
        
