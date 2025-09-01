@@ -8,7 +8,10 @@
  "field_order": [
   "item_code",
   "quantity",
-  "delivery_date"
+  "delivery_date",
+  "column_break_gqvt",
+  "item_stock",
+  "number_of_can_return"
  ],
  "fields": [
   {
@@ -29,13 +32,28 @@
    "in_list_view": 1,
    "label": "Item code",
    "options": "Item"
+  },
+  {
+   "fieldname": "item_stock",
+   "fieldtype": "Int",
+   "label": "Item Stock",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_gqvt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "number_of_can_return",
+   "fieldtype": "Int",
+   "label": "No. of can return"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-08-22 20:16:53.811961",
+ "modified": "2025-08-29 17:44:30.679211",
  "modified_by": "Administrator",
  "module": "Aquatrack",
  "name": "Delivery Items",

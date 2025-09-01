@@ -7,13 +7,14 @@
  "field_order": [
   "customer_name",
   "mobile_number",
-  "address_title",
+  "address_get",
   "address",
   "tr_status",
   "can_return",
   "number_of_can_return",
   "items",
-  "amended_from"
+  "amended_from",
+  "warehouse_customer"
  ],
  "fields": [
   {
@@ -26,10 +27,9 @@
    "fetch_from": "customer_name.mobile_no",
    "fieldname": "mobile_number",
    "fieldtype": "Data",
-   "label": "Customer Mobile no"
+   "label": "Customer Mobile No"
   },
   {
-   "fetch_from": "customer_name.primary_address",
    "fieldname": "address",
    "fieldtype": "Small Text",
    "label": "Customer Address",
@@ -43,14 +43,6 @@
    "search_index": 1
   },
   {
-   "fetch_from": "customer_name.customer_primary_address",
-   "fieldname": "address_title",
-   "fieldtype": "Link",
-   "hidden": 1,
-   "label": "address title",
-   "options": "Address"
-  },
-  {
    "fieldname": "amended_from",
    "fieldtype": "Link",
    "label": "Amended From",
@@ -61,13 +53,13 @@
    "search_index": 1
   },
   {
-   "default": "To Deliver",
+   "default": "Open",
    "fieldname": "tr_status",
    "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Trip Status",
    "no_copy": 1,
-   "options": "To Deliver\nOut to Deliver\nDelivered",
+   "options": "Open\nTo Deliver\nOut to Deliver\nDelivered",
    "print_hide": 1,
    "search_index": 1,
    "width": "200px"
@@ -76,13 +68,28 @@
    "default": "0",
    "fieldname": "can_return",
    "fieldtype": "Check",
+   "hidden": 1,
    "label": "Can Return"
   },
   {
    "depends_on": "eval:doc.can_return==1\r\n",
    "fieldname": "number_of_can_return",
    "fieldtype": "Int",
+   "hidden": 1,
    "label": "Number of can return"
+  },
+  {
+   "fetch_from": "customer_name.custom_customer_warehouse",
+   "fieldname": "warehouse_customer",
+   "fieldtype": "Data",
+   "label": "Customer Warehouse"
+  },
+  {
+   "fetch_from": "customer_name.primary_address",
+   "fieldname": "address_get",
+   "fieldtype": "Small Text",
+   "hidden": 1,
+   "label": "address title"
   }
  ],
  "grid_page_length": 50,
@@ -93,7 +100,7 @@
    "link_fieldname": "custom_warehouse"
   }
  ],
- "modified": "2025-08-26 12:08:14.858187",
+ "modified": "2025-08-29 17:47:00.460738",
  "modified_by": "Administrator",
  "module": "Aquatrack",
  "name": "Trips Delivery",

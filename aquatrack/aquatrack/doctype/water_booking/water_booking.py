@@ -30,7 +30,7 @@ class WaterBooking(Document):
                 }
             )
             lead.insert(ignore_permissions=True)
-            frappe.msgprint("Lead Created")
+            #frappe.msgprint("Lead Created")
 
             return
 
@@ -51,7 +51,7 @@ class WaterBooking(Document):
             )
 
         s_o.insert(ignore_permissions=True)
-        frappe.msgprint("sales order created")
+        #frappe.msgprint("sales order created")
 
         t_d = frappe.get_doc({
             "doctype": "Trips Delivery",
@@ -67,4 +67,4 @@ class WaterBooking(Document):
             )
 
         t_d.insert(ignore_permissions=True)
-        frappe.msgprint("trip created")
+        #frappe.msgprint("trip created")
