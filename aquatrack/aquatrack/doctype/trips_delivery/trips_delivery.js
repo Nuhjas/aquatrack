@@ -29,11 +29,12 @@ function stock_get(frm, cdt, cdn) {
 
             frappe.model.set_value(cdt, cdn, "item_stock", stock);
 
-            // frm.fields_dict.number_of_can_return.$wrapper.append(
-            //     `<div class="stock-info" style="color:black; margin-top:5px;"> 
-            //             Available Stock: ${stock}
-            //             </div>`
-            // );
+            frm.fields_dict.number_of_can_return.$wrapper.append(
+                `<div class="stock-info" style="color:black; margin-top:5px;"> 
+                        Available Stock: ${stock}
+                        </div>`
+            
+            );
         }
     })
 }
